@@ -13,5 +13,7 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
     <flow name="maven-flow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/hello" allowedMethods="GET" doc:name="HTTP"/>
         <set-payload value="#['Hello Maven']" doc:name="Set Payload"/>
+        <set-property propertyName="http.status" value="200" doc:name="Property"/>
+        <logger level="INFO" doc:name="Logger"/>
     </flow>
 </mule>
